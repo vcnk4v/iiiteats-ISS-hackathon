@@ -1,0 +1,66 @@
+.center-box {
+  /* display: flex;
+ /*   justify-content: center;
+    align-items: center;*/
+  height: 10h;
+}
+
+#message {
+  font-size: 25px;
+  background-color: #e59299;
+  padding: 20px;
+  border-radius: 5px;
+}
+body {
+  background-image: url("https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F19%2F2017%2F08%2F17%2FGettyImages-545286388-2000.jpg&q=60");
+  background-size: cover;
+  background-attachment: fixed;
+  /*background-color: rgba(123, 238, 200, 0.571);
+    background-position: center;*/
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+  font-size: 35px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin-top: 0px;
+}
+
+.content {
+  /* margin-top: 10px;*/
+  padding: 30px;
+}
+
+.container {
+  width: 400px;
+  margin-left: 35%;
+  margin-top: 10%;
+  background-color: rgba(0, 0, 0, 0.591);
+  padding: 25px;
+  padding-left: 3%;
+  border-radius: 5px;
+}
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+form input[type="submit"] {
+  background-color: #4caf50;
+  margin-left: 160px;
+  color: white;
+  font-size: 20px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  width: auto;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Take Orders</title>
+    <link rel="stylesheet" type="text/css" href="../static/take_order.css" />
+    <link rel="stylesheet" href="../static/navbar.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="/take_orders">Take Order</a>
+      <a href="">Place Order</a>
+      <!--<a href="artists.html">Artists</a>-->
+    </nav>
+    <h1>
+      Deliver!
+      <br />
+      <p>Click on View More to view Order Details</p>
+    </h1>
+
+    <table>
+      <tr>
+        <th>Canteen</th>
+        <th>Deliver At</th>
+        <th>Deliver To</th>
+        <th>Delivery Status</th>
+        <th>Action</th>
+        <th>View more</th>
+      </tr>
+      {% for order in orders %}
+      <tr>
+        <td>{{ order[1] }}</td>
+        <td>{{ order[2] }}</td>
+        <td>{{ order[3] }}</td>
+        <td>{{ order[4] }}</td>
+        <td>
+          <form method="post" action="/deliver">
+            <input type="hidden" name="order_id" value="{{ order[0] }}" />
+            <button type="submit">Deliver</button>
+          </form>
+        </td>
+        <td><a href="/order_items/{{ order[0] }}">View Details</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <div class="flash-messages">
+      {% for message in messages %}
+      <p>{{ message }}</p>
+      {% endfor %}
+    </div>
+    {% endif %} {% endwith %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        setTimeout(function () {
+          $(".flash-messages").fadeOut("slow");
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>

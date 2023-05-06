@@ -1,0 +1,44 @@
+/* CSS for Order Items Page */
+
+body {
+  background-color: #000000;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin-top: 5%;
+  color: #ffffff;
+  text-align: center;
+  font-size: 35px;
+  font-weight: normal;
+  letter-spacing: 3px;
+  background: linear-gradient(-45deg, #eed152, #ffa602);
+  padding: 10%;
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin-left: 10%;
+}
+
+th {
+  text-align: center;
+  padding: 1%;
+  font-weight: normal;
+  font-size: 26px;
+  color: rgb(253, 228, 177);
+  border-bottom: 1px solid rgb(196, 166, 97);
+}
+
+td {
+  color: rgb(238, 223, 196);
+  padding: 1%;
+  font-size: 18px;
+  text-align: center;
+  border-bottom: 1px solid rgba(247, 231, 178, 0.311);
+}
+
+/* Optional: Add more styling as per your preference */

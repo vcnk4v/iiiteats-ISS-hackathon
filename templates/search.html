@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Menu</title>
+    <link rel="stylesheet" href="../static/search.css" />
+    <link rel="stylesheet" href="../static/navbar.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="/take_orders">Take Order</a>
+      <a href="">Place Order</a>
+      <!--<a href="artists.html">Artists</a>-->
+    </nav>
+    <h1>Menu</h1>
+
+    <form action="/search-menu" method="GET">
+      <input
+        type="text"
+        name="query"
+        placeholder="Search"
+        value="{{ query }}"
+      />
+      <select name="canteen">
+        <option value="">All Canteens</option>
+        {% for canteen in canteens %}
+        <option value="{{ canteen }}">{{ canteen }}</option>
+        {% endfor %}
+      </select>
+      <input
+        type="number"
+        name="min_price"
+        placeholder="Min Price"
+        value="{{ min_price }}"
+      />
+      <input
+        type="number"
+        name="max_price"
+        placeholder="Max Price"
+        value="{{ max_price }}"
+      />
+      <button type="submit">Search</button>
+    </form>
+
+    <table>
+      {% for item in menu_items %}
+      <tr>
+        <td>
+          <div class="result-box">
+            <div class="result-title">{{ item[0] }}</div>
+            <div class="result-details"><span>Cost</span> {{ item[1] }}</div>
+            <div class="result-details"><span>Canteen</span> {{ item[2] }}</div>
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

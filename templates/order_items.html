@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Order Items</title>
+    <link rel="stylesheet" href="../static/order_items.css" />
+    <link rel="stylesheet" href="../static/navbar.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="/take_orders">Take Order</a>
+      <a href="">Place Order</a>
+    </nav>
+
+    <h1>Order Details</h1>
+    <table>
+      <tr>
+        <th>Menu Item</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+      {% for order_item in order_items %}
+      <tr>
+        <td>{{ order_item[0] }}</td>
+        <td>{{ order_item[1] }}</td>
+        <td>{{ order_item[2] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

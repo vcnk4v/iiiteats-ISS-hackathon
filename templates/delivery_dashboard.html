@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Delivery Dashboard</title>
+    <link rel="stylesheet" href="../static/delivery_dashboard.css" />
+    <link rel="stylesheet" href="../static/navbar.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="/take_orders">Take Order</a>
+      <a href="">Place Order</a>
+      <!--<a href="artists.html">Artists</a>-->
+    </nav>
+    <h1>Delivery Dashboard</h1>
+    <table>
+      <tr>
+        <th>Order ID</th>
+        <th>Customer Name</th>
+        <th>Delivery Status</th>
+        <th>Action</th>
+        <th>View Details</th>
+      </tr>
+      {% for order in orders %}
+      <tr>
+        <td>{{ order[0] }}</td>
+        <td>{{ order[1] }}</td>
+        <td>{{ order[2] }}</td>
+        <td>
+          <form method="post" action="/mark-delivered/{{ order[0] }}">
+            <button type="submit">Mark as Delivered</button>
+          </form>
+        </td>
+        <td><a href="/order_items/{{ order[0] }}">View Details</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+h1 {
+  text-align: center;
+  color: white;
+  margin-top: 5%;
+}
+
+body {
+  background-color: black;
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color: antiquewhite;
+}
+
+th {
+  color: antiquewhite;
+}
+
+/* Button styles */
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: #af954c;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3d2d09;
+}
+
+button:active {
+  background-color: #8e623e;
+}
+a:visited {
+  color: antiquewhite;
+}
+a:hover {
+  color: rgb(185, 122, 38);
+}

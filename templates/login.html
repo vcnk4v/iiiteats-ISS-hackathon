@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/login.css" />
+    <link rel="stylesheet" href="../static/navbar.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="/signup">Sign Up</a>
+      <a href="/login">Login</a>
+      <!--<a href="artists.html">Artists</a>-->
+    </nav>
+    <div class="content">
+      <div class="container">
+        <h1>Login</h1>
+        <form action="/login" method="post">
+          <label for="name">Email:</label>
+          <input type="text" id="email" name="email" required />
+          <br /><br />
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+          <br /><br />
+          <input type="submit" value="Log In" />
+        </form>
+        <div class="center-box">
+          {% if message %}
+          <p id="message">
+            {{ message }} Try <a href="/signup">signing up</a> instead.
+          </p>
+          {% else %}
+          <p id="message" style="display: none"></p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

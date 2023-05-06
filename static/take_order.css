@@ -1,0 +1,94 @@
+/* Style the table */
+body {
+  background-color: #1f1e1e;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+h1 {
+  background: linear-gradient(-45deg, #eed152, #dd085a, #ffee02, #da2215);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  padding: 10%;
+  margin-top: 3.5%;
+  color: #ffffff;
+  text-align: center;
+  font-size: 35px;
+  font-weight: normal;
+  letter-spacing: 3px;
+}
+p {
+  font-size: 20px;
+}
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin-left: 10%;
+}
+
+th {
+  text-align: center;
+  padding: 1%;
+  font-weight: normal;
+  font-size: 26px;
+  color: rgb(253, 228, 177);
+  border-bottom: 1px solid rgb(196, 166, 97);
+  letter-spacing: 2px;
+}
+
+td {
+  color: rgb(238, 223, 196);
+  padding: 1%;
+  font-size: 18px;
+  text-align: center;
+  border-bottom: 1px solid rgba(247, 231, 178, 0.311);
+  letter-spacing: 2px;
+}
+/* CSS for the deliver button */
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: #af954c;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3d2d09;
+}
+
+button:active {
+  background-color: #8e623e;
+}
+
+a:visited {
+  color: antiquewhite;
+}
+a:hover {
+  color: rgb(190, 122, 32);
+}
+
+.flash-messages {
+  color: antiquewhite;
+  text-align: center;
+  font-style: italic;
+}
