@@ -1,0 +1,142 @@
+.rating-boxes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+
+  margin: 5%;
+}
+
+.rating-box {
+  background-color: #f5f5f5;
+  padding: 20px;
+
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.select-field select {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border: none;
+
+  font-size: 16px;
+  cursor: pointer;
+}
+
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+select {
+  border: none;
+  padding: 2%;
+  margin-bottom: 1%;
+}
+
+form {
+  background-color: #f5f5f5;
+  padding: 20px;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+form input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+h1 {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(6, 1, 7, 0.685),
+      rgba(12, 5, 26, 0.386)
+    ),
+    url("https://thefoodgroup.ca/wp-content/uploads/2018/01/style12.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10%;
+  text-align: left;
+  color: white;
+  letter-spacing: 5px;
+  font-size: 80px;
+  margin-top: 0px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1 p {
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.add-review-button button {
+  margin-left: 45%;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 1%;
+  transition: background-color 0.3s ease;
+}
+
+.add-review-button button:hover {
+  background-color: #555;
+}
+
+.star-widget input {
+  display: none;
+}
+.star-widget label {
+  font-size: 40px;
+  color: #444;
+  padding-top: 1%;
+  padding-bottom: 3%;
+  float: right;
+  margin-right: 10%;
+  transition: all 0.2s ease;
+}
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label {
+  color: rgb(253, 226, 72);
+
+  text-shadow: 0 0 20px rgb(202, 141, 101);
+}
+
+input:checked ~ label {
+  color: rgb(248, 208, 77);
+  text-shadow: 0 0 20px rgb(212, 182, 7);
+}
+
+input#rate-5:checked ~ label {
+  color: rgb(255, 230, 0);
+
+  text-shadow: 0 0 20px rgb(198, 164, 133);
+}
+
+input:checked ~ form {
+  display: block;
+}
+.star-widget {
+  width: 80%;
+  padding: 3%;
+}
+body {
+  background-color: #252424;
+}

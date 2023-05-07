@@ -1,16 +1,14 @@
-# hackathon
+# Hackathon
 
 # IIITeats: _A website for placing orders and taking deliveries_
 
-# Table of Contents
+## Table of Contents
 
 - [Summary](#Summary)
 - [Technologies used](#technologies-used)
-- [Project Directory Status](#project-directory-status)
+- [Database Structure](#database-structure)
 - [How to use the website](#How-to-use-the-website)
   - [Instructions](#instructions)
-- [Link to the website](#Link-to-the-website)
-- [Acknowledgements](#acknowledgments)
 
 ## Summary
 
@@ -24,7 +22,9 @@ Ever asked your friend at Tantra to get you some fried rice just because you wer
 - Python
 - SQLite3
 
-## Project Directory Status
+## Database Structure
+
+![Screenshot](screenshot.png)
 
 ## How to use the website
 

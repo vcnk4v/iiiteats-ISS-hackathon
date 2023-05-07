@@ -1,0 +1,124 @@
+/* Profile Page */
+h1 {
+  color: #fdfcfc;
+  font-size: 24px;
+  margin-bottom: 10px;
+  padding: 10%;
+  margin-top: 3%;
+  background: linear-gradient(-45deg, #eed152, #dd085a, #540ea3, #da2215);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+body {
+  background-color: #333;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+h1 p {
+  font-weight: normal;
+  font-size: 18px;
+}
+h2 {
+  color: #f8f4f4;
+  font-size: 40px;
+  margin-bottom: 10px;
+  margin-left: 5%;
+}
+
+form p {
+  font-weight: bold;
+}
+
+form {
+  padding: 3% 5%;
+  font-size: 20px;
+  margin-left: 10%;
+  background-color: #f8f4f4ad;
+}
+
+/* User Details Form */
+form[action="/update-user-details"] {
+  margin-bottom: 20px;
+}
+
+form[action="/update-user-details"] label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form[action="/update-user-details"] input[type="text"] {
+  width: 250px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+form[action="/update-user-details"] button[type="submit"] {
+  padding: 8px 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Change Password Form */
+form[action="/change-password"] {
+  margin-bottom: 20px;
+}
+
+form[action="/change-password"] label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form[action="/change-password"] input[type="password"] {
+  width: 250px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+form[action="/change-password"] button[type="submit"] {
+  padding: 8px 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin-bottom: 5%;
+}
+
+th {
+  text-align: center;
+  padding: 1%;
+  font-weight: normal;
+  font-size: 26px;
+  color: #f8f4f4;
+  border-bottom: 1px solid rgb(196, 166, 97);
+  letter-spacing: 2px;
+}
+
+td {
+  padding: 1%;
+  font-size: 18px;
+  color: #f8f4f4;
+  text-align: center;
+  border-bottom: 1px solid rgba(247, 231, 178, 0.311);
+  letter-spacing: 2px;
+}
+.forms-container {
+  display: flex;
+  margin-left: 10%;
+  margin-bottom: 5%;
+}

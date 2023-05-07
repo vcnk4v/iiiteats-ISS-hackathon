@@ -25,8 +25,8 @@ def signup():
         cursor = conn.cursor()
 
         # Insert user details into "UserDetails" table
-        cursor.execute("INSERT INTO UserDetails (contact, email, room_no, hostel, password) VALUES (?, ?, ?, ?, ?);",
-                       (contact, email, room_no, hostel, password))
+        cursor.execute("INSERT INTO UserDetails (contact, email, room_no, hostel, name,password) VALUES (?, ?, ?, ?,?, ?);",
+                       (contact, email, room_no, hostel, name,password))
         conn.commit()
 
         # Get the user ID after inserting into "UserDetails" table
@@ -221,6 +221,233 @@ def search_menu():
     conn.close()
     # Render the menu page template with the filtered menu items and form values
     return render_template('search.html', menu_items=menu_items, query=query, canteens=canteens, min_price=min_price, max_price=max_price)
+
+@app.route('/ratings')
+def ratings():
+    # Retrieve ratings from the database
+    conn = sqlite3.connect('iiiteats.db')
+    cursor = conn.cursor()
+    cursor.execute("""SELECT Rating.rating_id, Users.name, Canteens.name, Rating.rating, Rating.review
+        FROM Rating
+        JOIN Users ON Rating.user_id = Users.id
+        JOIN Canteens ON Rating.canteen_id = Canteens.canteen_id""")
+    ratings = cursor.fetchall()
+    conn.close()
+    
+    # Pass the ratings data to the template
+    return render_template('ratings.html', ratings=ratings)
+
+@app.route('/submit-rating', methods=['POST'])
+def submit_rating():
+    # Retrieve the submitted data from the form
+    canteen_id = request.form['canteen_id']
+    rating = request.form['rate']
+    review = request.form['review']
+    user_id = session['user_id']
+
+    # Connect to the database
+    conn = sqlite3.connect('iiiteats.db')
+    cursor = conn.cursor()
+
+    # Insert the rating into the Rating table
+    cursor.execute("INSERT INTO Rating (user_id, canteen_id, rating,review) VALUES (?, ?, ?,?);",
+                   (user_id, canteen_id, rating,review))
+    conn.commit()
+
+    # Close the database connection
+    conn.close()
+
+    # Redirect to a confirmation page or any other desired page
+    return redirect('/ratings')
+
+
+@app.route('/profile')
+def profile():
+    user_id = session['user_id']
+    
+    conn = sqlite3.connect('iiiteats.db')
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * FROM UserDetails WHERE id = ?", (user_id,))
+    user = cursor.fetchone()
+    
+        # Assuming the column order is: id, contact, email, room_no, hostel, name, password
+    user = {
+        'id': user[0],
+        'contact': user[1],
+        'email': user[2],
+        'room_no': user[3],
+        'hostel': user[4],
+        'name': user[5],
+        'password': user[6]
+    }
+    # Retrieve user details from the database
+
+    cursor.execute("""
+    SELECT orders.order_id, orders.user_id, orders.order_total, orders.delivery_status, canteens.name, orders.location
+    FROM orders
+    JOIN canteens ON orders.canteen_id = canteens.canteen_id
+    WHERE orders.user_id = ?""", (user_id,))
+
+    orders = cursor.fetchall()
+    old_orders = []
+
+    for order in orders:
+        old_orders.append({
+            'order_id': order[0],
+            'user_id': order[1],
+            'order_total': order[2],
+            'delivery_status': order[3],
+            'canteen_name': order[4],
+            'location': order[5]
+        })
+        cursor.execute("SELECT * FROM Deliveries WHERE user_id = ?", (user_id,))
+        deliveries = cursor.fetchall()
+        old_deliveries = []
+        for delivery in deliveries:
+            # Assuming the column order is: delivery_id, order_id, user_id, status
+            old_deliveries.append({
+                'delivery_id': delivery[0],
+                'order_id': delivery[1],
+                'user_id': delivery[2],
+                'status': delivery[3]
+            })
+    # Close the database connection
+    conn.commit()
+    conn.close()
+
+    
+    return render_template('profile.html', user=user, old_orders=old_orders, old_deliveries=old_deliveries)
+
+@app.route('/update-user-details', methods=['POST'])
+def update_user_details():
+    conn = sqlite3.connect('iiiteats.db')
+    cursor = conn.cursor()
+    user_id = session['user_id']
+    contact = request.form['contact']
+    email = request.form['email']
+    room_no = request.form['room_no']
+    hostel = request.form['hostel']
+    
+    # Update user details in the database
+    cursor.execute("UPDATE UserDetails SET contact = ?, email = ?, room_no = ?, hostel = ? WHERE id = ?",
+                   (contact, email, room_no, hostel, user_id))
+    conn.commit()
+        # Close the database connection
+    conn.close()
+    return redirect('/profile')
+
+# Route to handle password change
+@app.route('/change-password', methods=['POST'])
+def change_password():
+    # Check if the user is logged in
+    if 'user_id' not in session:
+        return redirect('/login')  # Redirect to login if not logged in
+
+    # Retrieve the current and new passwords from the form
+    user_id = session['user_id']
+    current_password = request.form['current_password']
+    new_password = request.form['new_password']
+    confirm_password = request.form['confirm_password']
+
+    # Validate the new password and confirm password
+    if new_password != confirm_password:
+        return "New password and confirm password do not match."
+
+    # Verify the current password against the stored password in the database
+    conn = sqlite3.connect('iiiteats.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT password FROM UserDetails WHERE id = ?", (user_id,))
+    stored_password = cursor.fetchone()[0]
+    conn.close()
+
+    if current_password != stored_password:
+        return "Incorrect current password."
+
+    # Update the password in the database
+    conn = sqlite3.connect('iiiteats.db')
+    cursor = conn.cursor()
+    cursor.execute("UPDATE UserDetails SET password = ? WHERE id = ?", (new_password, user_id))
+    conn.commit()
+    conn.close()
+
+    return redirect('/profile')
+
+@app.route('/canteens')
+def canteens():
+    return render_template("canteens.html")
+
+@app.route('/menu.html', methods=['GET'])
+def menu():
+    canteen_id = request.args.get('canteenId')
+    conn = sqlite3.connect('iiiteats.db')  # Replace 'your_database.db' with your actual database file path
+    cursor = conn.cursor()
+
+    # Execute a query to retrieve menu items for the specified canteen_id
+    query = "SELECT menu_id, item_name, item_price FROM menu WHERE canteen_id = ?"
+    cursor.execute(query, (canteen_id,))
+    menu_items = cursor.fetchall()
+
+    conn.close()
+    
+    return render_template('menu.html', menu_items=menu_items, canteen_id=canteen_id)
+
+
+
+@app.route('/place_order', methods=['POST'])
+def place_order():
+    # Retrieve the order details from the form submission
+    menu_id = request.form.get('menuId')
+    canteen_id = request.form.get('canteenId')
+    location = request.form.get('location')
+    quantity = int(request.form.get('quantity'))
+
+    # Connect to the database
+    conn = sqlite3.connect('iiiteats.db')
+    cursor = conn.cursor()
+
+    try:
+        # Insert the order details into the "orders" table
+        cursor.execute("INSERT INTO orders (user_id, order_total, delivery_status, canteen_id, location) VALUES (?, ?, ?, ?, ?)",
+                       (session['user_id'], 0, 'pending', canteen_id, location))
+        order_id = cursor.lastrowid
+
+        # Retrieve the menu item details
+        cursor.execute("SELECT item_name, item_price FROM menu WHERE menu_id = ?", (menu_id,))
+        menu_item = cursor.fetchone()
+        item_price = int(menu_item[1])
+
+
+        # Insert the order item details into the "orderitems" table
+        cursor.execute("INSERT INTO orderitems (order_id, menu_id, quantity) VALUES (?, ?, ?)",
+                       (order_id, menu_id, quantity))
+
+        # Calculate the order total
+        order_total = item_price * quantity
+
+        # Update the order total in the "orders" table
+        cursor.execute("UPDATE orders SET order_total = ? WHERE order_id = ?", (order_total, order_id))
+
+        # Commit the changes to the database
+        conn.commit()
+
+        flash('Order placed successfully!', 'success')
+        return redirect('/canteens')
+
+    except Exception as e:
+        conn.rollback()
+        flash('Error occurred while placing the order!', 'error')
+        print(str(e))
+
+    finally:
+        # Close the database connection
+        conn.close()
+
+    return redirect('/canteens')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

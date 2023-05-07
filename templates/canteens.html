@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/placeOrder.css" />
+    <link rel="stylesheet" href="../static/navbar.css" />
+    <title>Place Order</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="/profile">Profile</a>
+      <a href="/about">About</a>
+      <a href="/take_orders">Take Order</a>
+      <a href="/canteens">Place Order</a>
+      <!--<a href="artists.html">Artists</a>-->
+    </nav>
+    <div class="title">Available Canteens</div>
+    <form action="/menu.html" method="get">
+      <div class="box" id="close">
+        <input type="hidden" name="canteenId" value="1" />
+        <input type="submit" value="Tantra Food Zone" />
+      </div>
+    </form>
+    <div class="content"></div>
+
+    <form action="/menu.html" method="get">
+      <div class="box" id="close">
+        <input type="hidden" name="canteenId" value="2" />
+        <input type="submit" value="Vindya Canteen" />
+      </div>
+    </form>
+    <div class="content"></div>
+
+    <form action="/menu.html" method="get">
+      <div class="box" id="close">
+        <input type="hidden" name="canteenId" value="3" />
+        <input type="submit" value="Basket Ball Canteen" />
+      </div>
+    </form>
+    <div class="content"></div>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+body {
+  padding: 0px 0px;
+  margin: 0px 0px;
+  /* background-color: rgb(196, 160, 113); */
+  background-image: url(../static/placeorderback.jpg);
+  /* backdrop-filter: brightness(60%); */
+  background-size: cover;
+  color: rgb(219, 209, 186);
+  /* backdrop-filter: blur(15px); */
+}
+p {
+  margin: 0px 0px;
+}
+.title {
+  font-size: 80px;
+  margin: 50px auto;
+  text-align: center;
+}
+.box {
+  padding: 35px 50px;
+  margin: 20px auto;
+  width: 30%;
+  font-size: 50px;
+  background-color: #c4997180;
+  box-shadow: 6px 6px 20px black;
+  /* border:2px solid black; */
+  border-radius: 10px;
+  cursor: pointer;
+}
+.content {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  margin: 20px 50px;
+}
+.content2 {
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* width:80%; */
+}
+.content .foodtypebox {
+  width: 25%;
+  /* border:2px solid rgb(197, 191, 191);
+         */
+  background-color: #21170a8c;
+  box-shadow: 4px 4px 15px black;
+  border-radius: 6px;
+  font-size: 45px;
+  margin: 5px 25px;
+  padding: 8px 55px;
+}
+.content2 .menuItem img {
+  width: 280px;
+  height: 280px;
+  border-radius: 6px;
+}
+.content2 .menuItem {
+  border: 2px solid rgb(207, 200, 200);
+  padding: 30px 30px;
+  margin: 30px 30px;
+  border-radius: 5px;
+}
+/* .content2 .menuItem{
+        
+    } */
+.content2 .menuItem button {
+  cursor: pointer;
+  font-size: 18px;
+  margin: 4px 19px;
+  border-radius: 5px;
+  background-color: rgb(176, 209, 209);
+}
+.content2 .menuItem #input {
+  display: inline;
+  width: 30px;
+}

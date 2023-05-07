@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Menu</title>
+    <link rel="stylesheet" href="../static/menu.css" />
+    <link rel="stylesheet" href="../static/navbar.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="/profile">Profile</a>
+      <a href="/about">About</a>
+      <a href="/take_orders">Take Order</a>
+      <a href="/canteens">Place Order</a>
+      <!--<a href="artists.html">Artists</a>-->
+    </nav>
+    <h1>Menu</h1>
+    <div class="menu-container">
+      {% for item in menu_items %}
+      <div class="menu-item">
+        <div class="item-name">{{ item[1] }}</div>
+        <div class="item-price">{{ item[2] }}</div>
+        <div class="order-button">
+          <button onclick="toggleOrderForm('{{ item[0] }}')">Order</button>
+        </div>
+        <div
+          id="order-form-{{ item[0] }}"
+          class="order-form"
+          style="display: none"
+        >
+          <form method="POST" action="/place_order">
+            <input type="hidden" name="menuId" value="{{ item[0] }}" />
+            <input type="hidden" name="canteenId" value="{{ canteen_id }}" />
+            <label for="location">Location:</label>
+            <input
+              type="text"
+              id="location"
+              name="location"
+              required
+            /><br /><br />
+            <label for="quantity">Quantity:</label>
+            <input
+              type="number"
+              id="quantity"
+              name="quantity"
+              min="1"
+              max="10"
+              required
+            /><br /><br />
+            <input type="submit" value="Place Order" />
+          </form>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <input type="hidden" id="canteen_id" value="{{ canteen_id }}" />
+    <script>
+      function toggleOrderForm(menuId) {
+        var form = document.getElementById("order-form-" + menuId);
+        if (form.style.display === "none") {
+          form.style.display = "block";
+        } else {
+          form.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

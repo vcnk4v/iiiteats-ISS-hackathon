@@ -1,7 +1,11 @@
 /* CSS for Order Items Page */
 
 body {
-  background-color: #000000;
+  /* background-color: #000000; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("https://wallpaperaccess.com/full/303567.jpg");
+
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -11,11 +15,11 @@ h1 {
   margin-top: 5%;
   color: #ffffff;
   text-align: center;
-  font-size: 35px;
+  font-size: 39px;
   font-weight: normal;
   letter-spacing: 3px;
   background: linear-gradient(-45deg, #eed152, #ffa602);
-  padding: 10%;
+  padding: 5%;
 }
 
 table {

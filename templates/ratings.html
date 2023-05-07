@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ratings Page</title>
+    <link rel="stylesheet" href="../static/ratings.css" />
+    <link rel="stylesheet" href="../static/navbar.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="/profile">Profile</a>
+      <a href="/take_orders">Take Order</a>
+      <a href="">Place Order</a>
+    </nav>
+    <h1>
+      Rate and Review
+      <p>Share your feedback and reviews with us</p>
+    </h1>
+
+    <div class="add-review-button">
+      <button id="add-review-btn">Add Review</button>
+    </div>
+    <form
+      id="review-form"
+      action="/submit-rating"
+      style="display: none"
+      method="POST"
+    >
+      <h2>Add Review</h2>
+      <label for="canteen_id">Select Canteen:</label>
+      <select name="canteen_id" id="canteen_id">
+        <option value="1">Vindhya Canteen</option>
+        <option value="2">Basketball Court Canteen</option>
+        <option value="3">Tantra Canteen</option>
+      </select>
+      <br />
+      <label for="rating">Rating:</label>
+      <div class="star-widget">
+        <input type="radio" name="rate" id="rate-5" value="5" />
+        <label for="rate-5" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-4" value="4" />
+        <label for="rate-4" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-3" value="3" />
+        <label for="rate-3" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-2" value="2" />
+        <label for="rate-2" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-1" value="1" />
+        <label for="rate-1" class="fas fa-star"></label>
+      </div>
+      <br />
+      <label for="review">Review:</label>
+      <textarea name="review" id="review" rows="4" cols="50"></textarea>
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+    <div class="rating-boxes">
+      {% for rating in ratings %}
+      <div class="rating-box">
+        <h3>User: {{ rating[1] }}</h3>
+        <p>Canteen: {{ rating[2] }}</p>
+        <p>Rating: {{ rating[3] }}/5</p>
+        <p>Review: {{ rating[4] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#add-review-btn").click(function () {
+          $("#review-form").toggle();
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -6,29 +6,19 @@ body {
   padding: 0;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 h1 {
-  background: linear-gradient(-45deg, #eed152, #dd085a, #ffee02, #da2215);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  padding: 10%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F19%2F2017%2F08%2F17%2FGettyImages-545286388-2000.jpg&q=60%27");
+  padding: 7%;
   margin-top: 3.5%;
   color: #ffffff;
   text-align: center;
-  font-size: 35px;
-  font-weight: normal;
+  font-size: 70px;
+
   letter-spacing: 3px;
+
+  text-shadow: 2px 2px 2px black;
 }
 p {
   font-size: 20px;

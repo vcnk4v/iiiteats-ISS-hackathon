@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Profile</title>
+    <link rel="stylesheet" type="text/css" href="../static/profile.css" />
+    <link rel="stylesheet" type="text/css" href="../static/navbar.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="/profile">Profile</a>
+      <a href="/take_orders">Take Order</a>
+      <a href="">Place Order</a>
+    </nav>
+    <h1>
+      Hello, {{ user.name }}
+      <p>
+        This is your profile page, where you can update your details, and view
+        your old orders and deliveries.
+      </p>
+    </h1>
+    <div class="forms-container">
+      <form action="/update-user-details" method="POST">
+        <p>Profile</p>
+        <label for="contact">Contact:</label>
+        <input
+          type="text"
+          id="contact"
+          name="contact"
+          value="{{ user.contact }}"
+        /><br />
+        <label for="email">Email:</label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          value="{{ user.email }}"
+        /><br />
+        <label for="room_no">Room No:</label>
+        <input
+          type="text"
+          id="room_no"
+          name="room_no"
+          value="{{ user.room_no }}"
+        /><br />
+        <label for="hostel">Hostel:</label>
+        <input
+          type="text"
+          id="hostel"
+          name="hostel"
+          value="{{ user.hostel }}"
+        /><br />
+        <button type="submit">Update</button>
+      </form>
+      <form action="/change-password" method="POST">
+        <p>Edit Password</p>
+        <label for="current_password">Current Password:</label>
+        <input
+          type="password"
+          id="current_password"
+          name="current_password"
+        /><br />
+        <label for="new_password">New Password:</label>
+        <input type="password" id="new_password" name="new_password" /><br />
+        <label for="confirm_password">Confirm Password:</label>
+        <input
+          type="password"
+          id="confirm_password"
+          name="confirm_password"
+        /><br />
+        <button type="submit">Change Password</button>
+      </form>
+    </div>
+    <h2>Old Orders</h2>
+    <table>
+      <tr>
+        <th>Order ID</th>
+        <th>Canteed</th>
+        <th>Total Amount</th>
+        <th>Location</th>
+        <th>Status</th>
+      </tr>
+      {% for order in old_orders %}
+      <tr>
+        <td>{{ order.order_id }}</td>
+        <td>{{ order.canteen_name }}</td>
+        <td>{{ order.order_total }}</td>
+        <td>{{ order.location }}</td>
+        <td>{{ order.delivery_status }}</td>
+        <td><a href="/order_items/{{ order.order_id }}">View Details</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <h2>Old Deliveries</h2>
+    <table>
+      <tr>
+        <th>Delivery ID</th>
+        <th>Order ID</th>
+        <th>Status</th>
+      </tr>
+      {% for delivery in old_deliveries %}
+      <tr>
+        <td>{{ delivery.delivery_id }}</td>
+        <td>{{ delivery.order_id }}</td>
+        <td>{{ delivery.status }}</td>
+        <td><a href="/order_items/{{ delivery.order_id }}">View Details</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
