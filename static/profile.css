@@ -2,7 +2,7 @@
 h1 {
   color: #fdfcfc;
   font-size: 24px;
-  margin-bottom: 10px;
+  margin-bottom: 7%;
   padding: 5%;
   margin-top: 3%;
   background: linear-gradient(-45deg, #3d3d3c, #756634, #3f0d3e, #394364);
@@ -143,4 +143,16 @@ footer {
   height: 125px;
   background-color: #1f202293;
   color: white;
+}
+.dd {
+  color: white;
+  font-size: 30px;
+  background-color: #271300c9;
+  box-shadow: 2px 2px black;
+  padding: 2% 5%;
+  margin-left: 30%;
+}
+.dd:hover {
+  text-decoration: underline;
+  background-color: #756634bb;
 }
