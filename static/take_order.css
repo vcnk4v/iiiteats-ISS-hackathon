@@ -1,7 +1,7 @@
 /* Style the table */
 body {
   background-color: #1f1e1e;
-  font-family: Arial, sans-serif;
+
   margin: 0;
   padding: 0;
 }
@@ -9,7 +9,12 @@ body {
 h1 {
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F19%2F2017%2F08%2F17%2FGettyImages-545286388-2000.jpg&q=60%27");
+  background-image: linear-gradient(
+      to bottom,
+      rgba(31, 9, 9, 0.5),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F19%2F2017%2F08%2F17%2FGettyImages-545286388-2000.jpg&q=60%27");
   padding: 7%;
   margin-top: 3.5%;
   color: #ffffff;
@@ -18,7 +23,7 @@ h1 {
 
   letter-spacing: 3px;
 
-  text-shadow: 2px 2px 2px black;
+  text-shadow: 2px 3px 3px black;
 }
 p {
   font-size: 20px;

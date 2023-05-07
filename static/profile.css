@@ -5,13 +5,18 @@ h1 {
   margin-bottom: 7%;
   padding: 5%;
   margin-top: 3%;
-  background: linear-gradient(-45deg, #3d3d3c, #756634, #3f0d3e, #394364);
+  background: linear-gradient(-45deg, #3d3d3c, #c0a342, #3f0d3e, #473e79);
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
 }
 
 body {
-  background-image: url("https://cutewallpaper.org/21/fast-food-wallpaper/Wallpaper-tomato-hamburger-Patty-sandwich-fast-food-bun-.jpg");
+  background-image: linear-gradient(
+      to bottom,
+      rgba(59, 35, 35, 0.5),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("https://cutewallpaper.org/21/fast-food-wallpaper/Wallpaper-tomato-hamburger-Patty-sandwich-fast-food-bun-.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -47,7 +52,7 @@ form {
   font-size: 30px;
   color: white;
   margin-left: 10%;
-  background-color: #151010ad;
+  background-color: #242121cb;
 }
 
 /* User Details Form */
@@ -102,7 +107,7 @@ form[action="/change-password"] button[type="submit"] {
 
 table {
   margin-left: 4%;
-  background-color: #151010ad;
+  background-color: #141111de;
   width: 80%;
   border-collapse: collapse;
   margin-bottom: 5%;

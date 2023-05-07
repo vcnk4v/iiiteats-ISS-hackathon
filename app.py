@@ -86,10 +86,13 @@ def login():
 def take_orders():
     conn = sqlite3.connect('./iiiteats.db')
     cursor = conn.cursor()
-    cursor.execute('''SELECT Orders.order_id, Canteens.name, Orders.location, Users.name, Orders.delivery_status
-                      FROM Orders
-                      JOIN Canteens ON Orders.canteen_id = Canteens.canteen_id
-                      JOIN Users ON Orders.user_id = Users.id AND orders.delivery_status not like "delivered"''')
+    cursor.execute('''SELECT Orders.order_id, Canteens.name, Orders.location, Users.name, Orders.delivery_status, orderitems.quantity
+FROM Orders
+JOIN Canteens ON Orders.canteen_id = Canteens.canteen_id
+JOIN Users ON Orders.user_id = Users.id
+JOIN orderitems ON Orders.order_id = orderitems.order_id
+WHERE Orders.delivery_status NOT LIKE 'delivered';
+''')
     orders_data = cursor.fetchall()
     conn.close()
     return render_template('take_orders.html', orders=orders_data)
@@ -312,6 +315,7 @@ def profile():
                 'user_id': delivery[2],
                 'status': delivery[3]
             })
+        print(deliveries)
     # Close the database connection
     conn.commit()
     conn.close()
@@ -423,7 +427,7 @@ def place_order():
                        (order_id, menu_id, quantity))
 
         # Calculate the order total
-        order_total = item_price * quantity
+        order_total = (item_price + 20) * quantity
 
         # Update the order total in the "orders" table
         cursor.execute("UPDATE orders SET order_total = ? WHERE order_id = ?", (order_total, order_id))

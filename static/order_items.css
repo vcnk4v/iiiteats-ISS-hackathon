@@ -6,7 +6,6 @@ body {
   background-size: cover;
   background-image: url("https://wallpaperaccess.com/full/303567.jpg");
 
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -17,8 +16,10 @@ h1 {
   text-align: center;
   font-size: 39px;
   font-weight: normal;
+  font-size: 80px;
+  text-shadow: 2px 2px black;
   letter-spacing: 3px;
-  background: linear-gradient(-45deg, #eed152, #ffa602);
+  background: linear-gradient(-45deg, #eed152, #ff7c02);
   padding: 5%;
 }
 

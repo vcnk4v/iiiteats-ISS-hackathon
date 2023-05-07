@@ -79,10 +79,11 @@
     <table>
       <tr>
         <th>Order ID</th>
-        <th>Canteed</th>
+        <th>Canteen</th>
         <th>Total Amount</th>
         <th>Location</th>
         <th>Status</th>
+
       </tr>
       {% for order in old_orders %}
       <tr>
@@ -91,7 +92,8 @@
         <td>{{ order.order_total }}</td>
         <td>{{ order.location }}</td>
         <td>{{ order.delivery_status }}</td>
-        <td><a href="/order_items/{{ order.order_id }}">View Details</a></td>
+
+        <td style="text-decoration: underline;"><a href="/order_items/{{ order.order_id }}">View Details</a></td>
       </tr>
       {% endfor %}
     </table>

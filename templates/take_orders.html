@@ -16,9 +16,10 @@
       <a href="/about">ABOUT</a>
     </nav>
     <h1>
-      Deliver!
+      Deliver
       <br />
       <p>Click on View More to view Order Details</p>
+      <p style="font-weight: normal;font-style: italic;">Delivering each item gets you an easy Rs. 20</p>
     </h1>
 
     <table>
@@ -27,6 +28,7 @@
         <th>Deliver At</th>
         <th>Deliver To</th>
         <th>Delivery Status</th>
+        <th>Total Earning</th>
       </tr>
       {% for order in orders %}
       <tr>
@@ -34,6 +36,7 @@
         <td>{{ order[2] }}</td>
         <td>{{ order[3] }}</td>
         <td>{{ order[4] }}</td>
+        <td>{{ order[5] * 20 }}</td>
         <td>
           <form method="post" action="/deliver">
             <input type="hidden" name="order_id" value="{{ order[0] }}" />

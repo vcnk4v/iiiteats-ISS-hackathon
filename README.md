@@ -8,7 +8,7 @@
 - [Technologies used](#technologies-used)
 - [Database Structure](#database-structure)
 - [How to use the website](#How-to-use-the-website)
-  - [Instructions](#instructions)
+- [Instructions](#instructions)
 
 ## Summary
 
@@ -28,4 +28,53 @@ Ever asked your friend at Tantra to get you some fried rice just because you wer
 
 ## How to use the website
 
-### INSTRUCTIONS:
+### INSTRUCTIONS
+    
+      Create an account or log in to your existing account.
+HOME PAGE:
+
+This page allows you to choose if you want to order food or deliver and redirects you accordingly to the respective pages.
+
+Ordering from iiiteats:
+
+
+1. Browse through the menus of various canteens.
+2. Order your desired item.
+3. Provide delivery details and make payment.
+4. Sit back and relax while someone delivers your food.
+
+Delivering from iiiteats:
+    
+1. Create an account or log in to your existing account.    
+2. See the list of orders placed and choose the one most convenient for you to deliver.       
+3. Once delivered, mark the item as delivered from your delivery dashboard and get quick cash in hand!
+
+PROFILE:
+
+1. On this page you can view your account details and make changes to the same.
+
+2. This page also shows history of your previous orders and deliveries.
+
+3. By clicking on "view detials" you get redirected to a page that shows precise detials of the order an its status. 
+
+4. If nobody has accepted the order yet then the status shows "pending", if someone has accepted the order it shows "in progress" and once it is delivered it shows "delivered".
+5. Only the person delivering the order can change the status from "in progress" to "delivered", after clicking on Delievry Dashboard.
+
+
+DELIVER ORDER:
+
+This page shows the list of orders with their respective details and status. The user can choose their delivery task from the list.
+
+PLACE ORDER :
+
+This page allows you to select items from various canteens and order.
+
+You can also rate canteens as well as view previous ratngs and reviews.
+
+You can also browse the menu and search your demanded dish to check if it is available or not. Our search feature comes with filter options that enable our user to be able to filter results on basis of choice of canteen or price or both.
+
+
+
+ABOUT:
+
+This page tells about the purpose of the site, explains its working to the customers in brief and further provides contact information about the creators.

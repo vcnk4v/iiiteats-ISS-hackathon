@@ -23,8 +23,8 @@
     <div class="menu-container">
       {% for item in menu_items %}
       <div class="menu-item">
-        <div class="item-name">{{ item[1] }}</div>
-        <div class="item-price">Cost: {{ item[2] }}</div>
+        <div class="item-name">Dish: {{ item[1] }}</div>
+        <div class="item-price">Cost: Rs. {{ item[2] }} </div>
         <div class="order-button">
           <button class="order" onclick="toggleOrderForm('{{ item[0] }}')">
             Order

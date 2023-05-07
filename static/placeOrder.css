@@ -8,7 +8,7 @@ body {
   background-attachment: fixed;
   /* backdrop-filter: brightness(60%); */
   background-size: cover;
-  color: rgb(219, 209, 186);
+  color: rgb(255, 254, 252);
   /* backdrop-filter: blur(15px); */
 }
 p {
@@ -21,7 +21,6 @@ p {
   text-align: center;
   padding: 5%;
   background-color: rgba(0, 0, 0, 0.692);
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 .box {
   display: flex;
@@ -31,7 +30,7 @@ p {
 .box .can {
   border-radius: 10px;
   background-color: #d6a253c0;
-  color: rgb(219, 209, 186);
+  color: rgb(255, 253, 249);
   text-shadow: 2px 2px 2px black;
   border: none;
   box-shadow: 6px 6px 20px black;
@@ -42,7 +41,7 @@ p {
   font-size: 50px;
 }
 .box .can:hover {
-  filter: brightness(130%);
+  filter: brightness(150%);
 }
 .content {
   display: flex;
@@ -95,14 +94,15 @@ p {
   width: 30px;
 }
 .rate {
-  width: 40%;
-  font-size: 40px;
+  width: 20%;
+  font-size: 30px;
   color: white;
-  background-color: rgba(66, 28, 3, 0.658);
+  background-color: rgba(160, 96, 13, 0.808);
   text-align: center;
-  margin-left: 28%;
-  padding: 3%;
+  margin-left: 40%;
+  padding: 2% 0%;
 }
 .rate:hover {
   text-decoration: underline;
+  color: rgb(255, 224, 51);
 }
