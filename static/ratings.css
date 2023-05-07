@@ -68,7 +68,7 @@ h1 {
       rgba(6, 1, 7, 0.685),
       rgba(12, 5, 26, 0.386)
     ),
-    url("https://thefoodgroup.ca/wp-content/uploads/2018/01/style12.jpg");
+    url("https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F19%2F2017%2F08%2F17%2FGettyImages-545286388-2000.jpg&q=60");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 10%;
@@ -138,5 +138,5 @@ input:checked ~ form {
   padding: 3%;
 }
 body {
-  background-color: #252424;
+  background-color: #360101;
 }

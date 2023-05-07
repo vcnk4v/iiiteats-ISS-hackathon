@@ -161,3 +161,12 @@ footer {
   text-decoration: underline;
   background-color: #756634bb;
 }
+.logout {
+  background-color: rgb(91, 186, 65);
+  padding: 1%;
+  color: white;
+  margin-left: 45%;
+}
+.logout:hover {
+  color: red;
+}
