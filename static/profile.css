@@ -3,14 +3,18 @@ h1 {
   color: #fdfcfc;
   font-size: 24px;
   margin-bottom: 10px;
-  padding: 10%;
+  padding: 5%;
   margin-top: 3%;
-  background: linear-gradient(-45deg, #eed152, #dd085a, #540ea3, #da2215);
+  background: linear-gradient(-45deg, #3d3d3c, #756634, #3f0d3e, #394364);
   background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  animation: gradient 10s ease infinite;
 }
+
 body {
-  background-color: #333;
+  background-image: url("https://cutewallpaper.org/21/fast-food-wallpaper/Wallpaper-tomato-hamburger-Patty-sandwich-fast-food-bun-.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 @keyframes gradient {
   0% {
@@ -40,9 +44,10 @@ form p {
 
 form {
   padding: 3% 5%;
-  font-size: 20px;
+  font-size: 30px;
+  color: white;
   margin-left: 10%;
-  background-color: #f8f4f4ad;
+  background-color: #151010ad;
 }
 
 /* User Details Form */
@@ -63,8 +68,9 @@ form[action="/update-user-details"] input[type="text"] {
 
 form[action="/update-user-details"] button[type="submit"] {
   padding: 8px 16px;
-  background-color: #333;
+  background-color: rgb(91, 186, 65);
   color: #fff;
+  font-weight: bold;
   border: none;
   cursor: pointer;
 }
@@ -87,13 +93,16 @@ form[action="/change-password"] input[type="password"] {
 
 form[action="/change-password"] button[type="submit"] {
   padding: 8px 16px;
-  background-color: #333;
+  background-color: rgb(91, 186, 65);
+  font-weight: bold;
   color: #fff;
   border: none;
   cursor: pointer;
 }
 
 table {
+  margin-left: 4%;
+  background-color: #151010ad;
   width: 80%;
   border-collapse: collapse;
   margin-bottom: 5%;
@@ -121,4 +130,17 @@ td {
   display: flex;
   margin-left: 10%;
   margin-bottom: 5%;
+}
+.link {
+  background-color: rgb(91, 186, 65);
+}
+footer {
+  margin-top: 100px;
+  text-align: center;
+  bottom: 0%;
+  font-size: 16.5px;
+  width: 100%;
+  height: 125px;
+  background-color: #1f202293;
+  color: white;
 }

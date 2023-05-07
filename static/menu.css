@@ -1,21 +1,48 @@
+body {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(31, 9, 9, 0.8),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url("https://cutewallpaper.org/21/fast-food-wallpaper/Wallpaper-tomato-hamburger-Patty-sandwich-fast-food-bun-.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+}
+.ftitle {
+  font-size: 150px;
+  margin: 30px 0px;
+  margin-top: 100px;
+  margin-bottom: 5%;
+  font-family: cursive;
+  padding: 3%;
+}
 .menu-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 30px;
 }
 
 .menu-item {
-  width: 200px;
-  border: 1px solid #ccc;
+  width: 30%;
+  line-height: 50px;
+  border-radius: 5px;
+  background-color: rgba(185, 138, 76, 0.568);
   padding: 10px;
-  margin: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
 }
 
 .item-name {
-  font-weight: bold;
+  font-size: 30px;
+  margin: 5px 50px;
   margin-bottom: 5px;
 }
 
 .item-price {
+  margin: 5px 50px;
   margin-bottom: 10px;
 }
 
@@ -23,10 +50,50 @@
   text-align: center;
   margin-top: 10px;
 }
-
+.order {
+  cursor: pointer;
+  padding: 2% 5%;
+  border: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.668);
+  font-size: 13px;
+  background-color: rgb(211 201 129);
+  border-radius: 5px;
+}
+.order:hover {
+  filter: brightness(70%);
+}
 .order-form {
   margin-top: 10px;
 }
 h1 {
   margin-top: 5%;
+}
+#location {
+  border-radius: 5px;
+  margin: 5px 5px;
+  background-color: rgb(239, 231, 191);
+}
+#quantity {
+  border-radius: 5px;
+  background-color: rgb(239, 231, 191);
+}
+.llabel {
+  margin: 15px 15px;
+}
+.qlabel {
+  margin: 15px 15px;
+}
+.submitbtn {
+  cursor: pointer;
+  border: none;
+  background-color: rgb(66, 39, 4);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.668);
+  border-radius: 5px;
+  padding: 2% 5%;
+  font-size: 16px;
+  margin: 5px 50px;
+  color: white;
+}
+.submitbtn:hover {
+  filter: brightness(70%);
 }

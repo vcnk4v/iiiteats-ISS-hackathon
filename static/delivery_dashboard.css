@@ -2,29 +2,41 @@ h1 {
   text-align: center;
   color: white;
   margin-top: 5%;
+  font-size: 55px;
+  text-shadow: 2px 2px 4px black;
 }
 
 body {
   background-color: black;
+  background-image: url('https://cutewallpaper.org/21/fast-food-wallpaper/Wallpaper-tomato-hamburger-Patty-sandwich-fast-food-bun-.jpg'); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;
+
+  
 }
 
 table {
+  margin-left: 4%;
+  font-size: 24px;
+  background-color: #151010ad;
   width: 80%;
   border-collapse: collapse;
-  margin-left: 10%;
-  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
-th,
+
 td {
   padding: 8px;
   text-align: left;
   border-bottom: 1px solid #ddd;
   color: antiquewhite;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 th {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
   color: antiquewhite;
+
 }
 
 /* Button styles */

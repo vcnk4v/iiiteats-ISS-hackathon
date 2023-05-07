@@ -2,7 +2,10 @@ body {
   padding: 0px 0px;
   margin: 0px 0px;
   /* background-color: rgb(196, 160, 113); */
-  background-image: url(../static/placeorderback.jpg);
+  background-image: url("https://cutewallpaper.org/21/fast-food-wallpaper/Wallpaper-tomato-hamburger-Patty-sandwich-fast-food-bun-.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   /* backdrop-filter: brightness(60%); */
   background-size: cover;
   color: rgb(219, 209, 186);
@@ -13,19 +16,33 @@ p {
 }
 .title {
   font-size: 80px;
-  margin: 50px auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
   text-align: center;
+  padding: 5%;
+  background-color: rgba(0, 0, 0, 0.692);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 .box {
-  padding: 35px 50px;
-  margin: 20px auto;
-  width: 30%;
-  font-size: 50px;
-  background-color: #c4997180;
-  box-shadow: 6px 6px 20px black;
-  /* border:2px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box .can {
   border-radius: 10px;
+  background-color: #d6a253c0;
+  color: rgb(219, 209, 186);
+  text-shadow: 2px 2px 2px black;
+  border: none;
+  box-shadow: 6px 6px 20px black;
+  width: 30%;
+  padding: 30px 40px;
+  margin: 10px 20px;
   cursor: pointer;
+  font-size: 50px;
+}
+.box .can:hover {
+  filter: brightness(130%);
 }
 .content {
   display: flex;
@@ -76,4 +93,16 @@ p {
 .content2 .menuItem #input {
   display: inline;
   width: 30px;
+}
+.rate {
+  width: 40%;
+  font-size: 40px;
+  color: white;
+  background-color: rgba(66, 28, 3, 0.658);
+  text-align: center;
+  margin-left: 28%;
+  padding: 3%;
+}
+.rate:hover {
+  text-decoration: underline;
 }

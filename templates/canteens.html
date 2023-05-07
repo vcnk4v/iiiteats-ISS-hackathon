@@ -6,21 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../static/placeOrder.css" />
     <link rel="stylesheet" href="../static/navbar.css" />
+    <link rel="stylesheet" href="../static/footer.css" />
     <title>Place Order</title>
   </head>
   <body>
     <nav class="navbar">
-      <a href="/profile">Profile</a>
-      <a href="/about">About</a>
-      <a href="/take_orders">Take Order</a>
-      <a href="/canteens">Place Order</a>
-      <!--<a href="artists.html">Artists</a>-->
+      <img src="../static/hackathon_logo.png" alt="logo" />
+      <a href="/profile">PROFILE</a>
+      <a href="/main">HOME</a>
+      <a href="/take_orders">DELIVER ORDER</a>
+      <a href="/canteens">PLACE ORDER</a>
+      <a href="/about">ABOUT</a>
     </nav>
-    <div class="title">Available Canteens</div>
+    <div class="title">Choose Canteen</div>
     <form action="/menu.html" method="get">
       <div class="box" id="close">
         <input type="hidden" name="canteenId" value="1" />
-        <input type="submit" value="Tantra Food Zone" />
+        <input type="submit" class="can" value="Tantra Food Zone" />
       </div>
     </form>
     <div class="content"></div>
@@ -28,7 +30,7 @@
     <form action="/menu.html" method="get">
       <div class="box" id="close">
         <input type="hidden" name="canteenId" value="2" />
-        <input type="submit" value="Vindya Canteen" />
+        <input type="submit" class="can" value="Vindya Canteen" />
       </div>
     </form>
     <div class="content"></div>
@@ -36,9 +38,19 @@
     <form action="/menu.html" method="get">
       <div class="box" id="close">
         <input type="hidden" name="canteenId" value="3" />
-        <input type="submit" value="Basket Ball Canteen" />
+        <input type="submit" class="can" value="Basket Ball Canteen" />
       </div>
     </form>
     <div class="content"></div>
+    <div class="rate"><a href="/ratings">Rate canteens</a></div>
+    <br><br>
+    <div class="rate"><a href="/search-menu?query=&canteen=&min_price=&max_price=">Browse Menu</a></div>
+    <footer>
+        <br>
+        <p>Satiate your cravings or Turn your spare time into extra cash! Join our community and let us serve you with all that we can. Know more <u> <b> <a
+                        href="/about">about us.</a> </u> </b> </p>
+        <p><b>IIITeats</b></p>
+        <br>
+    </footer> 
   </body>
 </html>

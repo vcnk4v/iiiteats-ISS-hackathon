@@ -72,7 +72,7 @@ def login():
             session['user_id'] = user_id
 
             # Redirect to the canteen page or any other desired page
-            return redirect('/delivery-dashboard')
+            return redirect('/main')
         else:
             message = "Credentials not found. "
             return render_template('login.html', message=message)
@@ -291,7 +291,7 @@ def profile():
 
     orders = cursor.fetchall()
     old_orders = []
-
+    old_deliveries = []
     for order in orders:
         old_orders.append({
             'order_id': order[0],
@@ -303,7 +303,7 @@ def profile():
         })
         cursor.execute("SELECT * FROM Deliveries WHERE user_id = ?", (user_id,))
         deliveries = cursor.fetchall()
-        old_deliveries = []
+        
         for delivery in deliveries:
             # Assuming the column order is: delivery_id, order_id, user_id, status
             old_deliveries.append({
@@ -449,5 +449,8 @@ def place_order():
 def about():
     return render_template('about.html')
 
+@app.route('/main')
+def main():
+    return render_template('main.html')
 if __name__ == '__main__':
     app.run(debug=True)

@@ -4,6 +4,7 @@
     <title>Ratings Page</title>
     <link rel="stylesheet" href="../static/ratings.css" />
     <link rel="stylesheet" href="../static/navbar.css" />
+    <link rel="stylesheet" href="../static/footer.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -11,9 +12,12 @@
   </head>
   <body>
     <nav class="navbar">
-      <a href="/profile">Profile</a>
-      <a href="/take_orders">Take Order</a>
-      <a href="">Place Order</a>
+      <img src="../static/hackathon_logo.png" alt="logo" />
+      <a href="/profile">PROFILE</a>
+      <a href="/main">HOME</a>
+      <a href="/take_orders">DELIVER ORDER</a>
+      <a href="/canteens">PLACE ORDER</a>
+      <a href="/about">ABOUT</a>
     </nav>
     <h1>
       Rate and Review
@@ -66,6 +70,13 @@
       </div>
       {% endfor %}
     </div>
+    <footer>
+      <br>
+      <p>Satiate your cravings or Turn your spare time into extra cash! Join our community and let us serve you with all that we can. Know more <u> <b> <a
+                      href="/about">about us.</a> </u> </b> </p>
+      <p><b>IIITeats</b></p>
+      <br>
+  </footer> 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $(document).ready(function () {
@@ -74,5 +85,6 @@
         });
       });
     </script>
+
   </body>
 </html>

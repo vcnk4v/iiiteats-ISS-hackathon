@@ -1,0 +1,45 @@
+body {
+  padding: 0px 0px;
+  margin: 0px 0px;
+  color: white;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(31, 9, 9, 0.575),
+      rgba(0, 0, 0, 0.548)
+    ),
+    url("https://cutewallpaper.org/21/fast-food-wallpaper/Wallpaper-tomato-hamburger-Patty-sandwich-fast-food-bun-.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  font-family: "Baloo Bhaijaan 2", cursive;
+}
+.box {
+  padding: 10px 25px;
+  margin: 20px 100px;
+  font-size: 25px;
+  border-radius: 6px;
+  margin-bottom: 80px;
+  /*border:2px solid rgb(224, 218, 218);*/
+  background-color: rgba(14, 14, 14, 0.582);
+  box-shadow: 4px 4px 15px rgb(74, 37, 14);
+}
+.box .subtitle {
+  font-weight: bold;
+  font-size: 35px;
+  font-family: "Times New Roman", Times, serif;
+}
+.title1 h1,
+h2 {
+  font-size: 50px;
+  font-family: "Bebas Neue", cursive;
+  text-align: center;
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.523);
+  color: rgb(255, 255, 255);
+}
+.team {
+  display: flex;
+}
+.member {
+  margin: 5px 50px;
+}
