@@ -9,6 +9,8 @@
 - [Database Structure](#database-structure)
 - [How to use the website](#How-to-use-the-website)
 - [Instructions](#instructions)
+- [Frameworks and Packages](#frameworks-and-packages)
+- [Contributions](#contributions)
 
 ## Summary
 
@@ -27,6 +29,10 @@ Ever asked your friend at Tantra to get you some fried rice just because you wer
 ![Screenshot](screenshot.png)
 
 ## How to use the website
+
+### SET UP
+
+Extract the zip file 26.zip and run 'python3 app.py' on terminal in the same directory. Click on the local address to get directed to the home page of the website, where the options for login/signup are there.
 
 ### INSTRUCTIONS
 
@@ -76,3 +82,37 @@ You can also browse the menu and search your demanded dish to check if it is ava
 ABOUT:
 
 This page tells about the purpose of the site, explains its working to the customers in brief and further provides contact information about the creators.
+
+## Frameworks and Packages Used
+
+- jQuery for javascript
+- In flask, we used Flask, render_template (to render particular templates), redirect (to redirect to desired page), session (to keep track of logged in user), request(to get form data), flash (to flash messages)
+- sqlite3
+- os module to generate secret key for session
+
+## Contributions
+
+Pratishtha:
+
+1. Login and Signup page
+2. Home page
+3. Navigation bar
+4. Footer
+5. CSS setup
+6. Flask linking
+
+Vyakhya Gupta
+
+1. Backend main Database setup
+2. Take order page
+3. Review system
+4. Search system
+5. Delivery dashboard
+6. Flask linking
+
+Jayesh
+
+1. About page
+2. Menu page
+3. Delivery page
+4. Flask linking
