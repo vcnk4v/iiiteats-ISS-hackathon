@@ -92,27 +92,26 @@ This page tells about the purpose of the site, explains its working to the custo
 
 ## Contributions
 
-Pratishtha:
+Pratishtha Saxena
 
 1. Login and Signup page
 2. Home page
 3. Navigation bar
 4. Footer
 5. CSS setup
-6. Flask linking
 
 Vyakhya Gupta
 
 1. Backend main Database setup
-2. Take order page
+2. Deliver page
 3. Review system
 4. Search system
 5. Delivery dashboard
-6. Flask linking
+6. Profile Page
+7. Flask linking
 
-Jayesh
+Jayesh Sutar
 
 1. About page
 2. Menu page
 3. Delivery page
-4. Flask linking
