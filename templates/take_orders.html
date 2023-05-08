@@ -31,6 +31,7 @@
         <th>Total Earning</th>
       </tr>
       {% for order in orders %}
+      {% if order[6]!=session['user_id'] %}
       <tr>
         <td>{{ order[1] }}</td>
         <td>{{ order[2] }}</td>
@@ -45,6 +46,7 @@
         </td>
         <td><a href="/order_items/{{ order[0] }}">View Details</a></td>
       </tr>
+      {% endif %}
       {% endfor %}
     </table>
     {% with messages = get_flashed_messages() %} {% if messages %}

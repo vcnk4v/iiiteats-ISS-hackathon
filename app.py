@@ -86,7 +86,7 @@ def login():
 def take_orders():
     conn = sqlite3.connect('./iiiteats.db')
     cursor = conn.cursor()
-    cursor.execute('''SELECT Orders.order_id, Canteens.name, Orders.location, Users.name, Orders.delivery_status, orderitems.quantity
+    cursor.execute('''SELECT Orders.order_id, Canteens.name, Orders.location, Users.name, Orders.delivery_status, orderitems.quantity, Orders.user_id
 FROM Orders
 JOIN Canteens ON Orders.canteen_id = Canteens.canteen_id
 JOIN Users ON Orders.user_id = Users.id
@@ -118,7 +118,7 @@ def order_items(order_id):
 def deliver():
     if request.method == 'POST':
         order_id = request.form['order_id']
-        status = 'in progress'
+       
         
         # Retrieve the logged-in user's ID from the session
         user_id = session['user_id']
@@ -134,10 +134,11 @@ def deliver():
                 flash('Order is already being delivered')
                 cursor.execute("UPDATE Orders SET delivery_status='in progress' WHERE order_id=?", (order_id,))
                 return redirect('/take_orders')
-
+            else:
+                cursor.execute("INSERT INTO Deliveries (order_id, user_id, status) VALUES (?, ?, ?)", (order_id, user_id, 'in progress'))
+                cursor.execute("UPDATE Orders SET delivery_status='in progress' WHERE order_id=?", (order_id,))
             # Insert the delivery details into the Deliveries table
-            cursor.execute("INSERT INTO Deliveries (order_id, user_id, status) VALUES (?, ?, ?)", (order_id, user_id, status))
-            cursor.execute("UPDATE Orders SET delivery_status='in progress' WHERE order_id=?", (order_id,))
+           
             conn.commit()
         flash('Delivery accepted!')
         return redirect('/take_orders')
@@ -304,18 +305,18 @@ def profile():
             'canteen_name': order[4],
             'location': order[5]
         })
-        cursor.execute("SELECT * FROM Deliveries WHERE user_id = ?", (user_id,))
-        deliveries = cursor.fetchall()
+    cursor.execute("SELECT * FROM Deliveries WHERE user_id = ?", (user_id,))
+    deliveries = cursor.fetchall()
         
-        for delivery in deliveries:
-            # Assuming the column order is: delivery_id, order_id, user_id, status
-            old_deliveries.append({
-                'delivery_id': delivery[0],
-                'order_id': delivery[1],
-                'user_id': delivery[2],
-                'status': delivery[3]
-            })
-        print(deliveries)
+    for delivery in deliveries:
+        # Assuming the column order is: delivery_id, order_id, user_id, status
+        old_deliveries.append({
+            'delivery_id': delivery[0],
+            'order_id': delivery[1],
+            'user_id': delivery[2],
+            'status': delivery[3]
+        })
+  
     # Close the database connection
     conn.commit()
     conn.close()
@@ -459,8 +460,20 @@ def logout():
     session.clear()
     return render_template('home.html')
 
+@app.route('/cancel/<order_id>')
+def cancel(order_id):
+    conn = sqlite3.connect('iiiteats.db')
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM ORDERS WHERE order_id=?",order_id)
+    cursor.execute("DELETE FROM orderitems WHERE order_id=?",order_id)
+    conn.commit()
+    conn.close()
+    return redirect('/profile')
+
+
 @app.route('/main')
 def main():
     return render_template('main.html')
 if __name__ == '__main__':
     app.run(debug=True)
+

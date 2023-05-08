@@ -93,7 +93,13 @@
         <td>{{ order.location }}</td>
         <td>{{ order.delivery_status }}</td>
 
+
         <td style="text-decoration: underline;"><a href="/order_items/{{ order.order_id }}">View Details</a></td>
+
+        {% if order.delivery_status!="Delivered" %}
+        <td><a href="/cancel/{{ order.order_id }}">Cancel<a></td>
+        {% endif %}
+
       </tr>
       {% endfor %}
     </table>

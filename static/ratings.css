@@ -83,8 +83,7 @@ h1 p {
   font-weight: normal;
   font-size: 20px;
 }
-
-.add-review-button button {
+button {
   margin-left: 45%;
   background-color: #333;
   color: #fff;
@@ -96,7 +95,7 @@ h1 p {
   transition: background-color 0.3s ease;
 }
 
-.add-review-button button:hover {
+button:hover {
   background-color: #555;
 }
 

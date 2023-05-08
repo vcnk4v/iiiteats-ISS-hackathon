@@ -21,12 +21,14 @@
         <th>Menu Item</th>
         <th>Quantity</th>
         <th>Price</th>
+        <th>Total</th>
       </tr>
       {% for order_item in order_items %}
       <tr>
         <td>{{ order_item[0] }}</td>
         <td>{{ order_item[1] }}</td>
-        <td>{{ order_item[2] }}</td>
+        <td>Rs. {{ order_item[2] }} per item</td>
+        <td>Rs. {{ order_item[2] * order_item[1] }} </td>
       </tr>
       {% endfor %}
     </table>

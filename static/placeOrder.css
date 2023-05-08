@@ -2,7 +2,12 @@ body {
   padding: 0px 0px;
   margin: 0px 0px;
   /* background-color: rgb(196, 160, 113); */
-  background-image: url("https://cutewallpaper.org/21/fast-food-wallpaper/Wallpaper-tomato-hamburger-Patty-sandwich-fast-food-bun-.jpg");
+  background-image: linear-gradient(
+      to bottom,
+      rgba(6, 1, 7, 0.685),
+      rgba(12, 5, 26, 0.386)
+    ),
+    url("https://cutewallpaper.org/21/fast-food-wallpaper/Wallpaper-tomato-hamburger-Patty-sandwich-fast-food-bun-.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -42,6 +47,7 @@ p {
 }
 .box .can:hover {
   filter: brightness(150%);
+  font-size: 55px;
 }
 .content {
   display: flex;
@@ -103,6 +109,6 @@ p {
   padding: 2% 0%;
 }
 .rate:hover {
-  text-decoration: underline;
   color: rgb(255, 224, 51);
+  font-size: 35px;
 }

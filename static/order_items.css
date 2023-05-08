@@ -11,16 +11,15 @@ body {
 }
 
 h1 {
-  margin-top: 5%;
+  margin-top: 8%;
   color: #ffffff;
   text-align: center;
-  font-size: 39px;
+  font-size: 40px;
   font-weight: normal;
-  font-size: 80px;
-  text-shadow: 2px 2px black;
+
   letter-spacing: 3px;
   background: linear-gradient(-45deg, #eed152, #ff7c02);
-  padding: 5%;
+  padding: 4%;
 }
 
 table {
